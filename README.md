@@ -40,7 +40,7 @@ Aplicación web progresiva (**PWA Mobile-First & Offline-First**) conectada al b
    ```
    Contenido de `.env`:
    ```env
-   VITE_API_URL=http://localhost:8080/v1
+   VITE_URL_API=http://localhost:8080/v1
    ```
 
 3. **Iniciar servidor de desarrollo (puerto `5174`):**
@@ -149,6 +149,6 @@ frontend-iglesia/
 
 ## Notas de Despliegue
 
-- En producción, configurar `VITE_API_URL` apuntando al API Gateway de KlaroConta (ej. `https://api.klaroconta.app/v1`).
+- En producción, configurar `VITE_URL_API` apuntando al API Gateway de KlaroConta (ej. `https://back.klaroconta.app/v1`). Nota: en Vite las variables `VITE_*` se inyectan en tiempo de compilación (`npm run build`), por lo que debes re-desplegar tras modificar la variable en Dokploy.
 - Asegurar que el dominio donde se aloje esta PWA (ej. `https://iglesia.klaroconta.app`) esté permitido en `ALLOWED_ORIGINS` dentro de `api-haber/app.env`.
 - La PWA requiere **HTTPS** en producción para registrar el Service Worker y habilitar el prompt de instalación en dispositivos móviles.

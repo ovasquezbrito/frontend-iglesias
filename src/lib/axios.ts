@@ -1,7 +1,10 @@
 import axios, { type InternalAxiosRequestConfig } from "axios";
 import { useChurchAuthStore } from "@/stores/church-auth.store";
 
-const baseURL = import.meta.env.VITE_API_URL || "http://localhost:8080/v1";
+const baseURL =
+  import.meta.env.VITE_URL_API ||
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:8080/v1";
 
 export const apiClient = axios.create({
   baseURL,
